@@ -22,8 +22,12 @@ idx = zeros(size(X,1), 1);
 %
 
 
-
-
+for i=1:size(X)
+  dist = centroids-X(i,:);
+  dist= sqrt(sum(dist.*dist,2));
+  [x, ix]= min(dist);
+  idx(i)=ix;
+endfor
 
 
 
